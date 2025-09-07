@@ -229,7 +229,7 @@ if __name__ == "__main__":
     print("Start time:{}".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', default='Movielens10M', help='Movielens10M/dbook/yelp')
+    parser.add_argument('--dataset', default='Movielens10M', help='Movielens10M/Netflix/Yelp')
     parser.add_argument('--Incremental_learner', default='Fine_tune', help='')
     parser.add_argument('--model_name', default='MeLU', help='')
     opt = parser.parse_args()
@@ -237,9 +237,9 @@ if __name__ == "__main__":
     # 加载Config
     if opt.dataset == "Movielens10M":
         from Configs.Configurations_Movielens10M_Fine_Tune import Movielens10M_config as config
-    elif opt.dataset == "dbook":
-        from Configs.Configurations_Dbook import Dbook_config as config
-    elif opt.dataset == "yelp":
+    elif opt.dataset == "Netflix":
+        from Configs.Configurations_Netflix import Netflix_config as config
+    elif opt.dataset == "Yelp":
         from  Configs.Configurations_Yelp import Yelp_config as config
     print("Configurations:")
     print(config)
